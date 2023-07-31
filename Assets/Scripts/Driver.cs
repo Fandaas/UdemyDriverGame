@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float _vehicleBaseSpeed = 0.1f;
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(0,0.1f,0);
+        transform.Translate(0, _vehicleBaseSpeed, 0);
     }
 }
