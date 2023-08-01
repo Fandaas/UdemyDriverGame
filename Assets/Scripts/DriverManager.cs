@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DriverManager : MonoBehaviour
 {
+    [SerializeField] private Transform _packageIndicator;
     private bool _hasPackage = false;
     private PackageTarget _currentPackage;
 
@@ -16,6 +17,7 @@ public class DriverManager : MonoBehaviour
         }
         _hasPackage = true;
         _currentPackage = package;
+        _packageIndicator.gameObject.SetActive(true);
         return true;
     }
 
@@ -27,6 +29,7 @@ public class DriverManager : MonoBehaviour
             return false;
         }
         _hasPackage = false;
+        _packageIndicator.gameObject.SetActive(false);
         _currentPackage.Respawn();
         _currentPackage = null;
         return true;
