@@ -2435,6 +2435,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vehicleBaseSpeed: 0.31
   _vehicleSteerSpeed: 1.66
+  _maxSpeedModifier: 2.3
+  _minSpeedModifier: 0.9
 --- !u!50 &519929468
 Rigidbody2D:
   serializedVersion: 4
@@ -2519,6 +2521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf13e15aa62e6e458487feb48fa0ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collisionSlowdownFactor: -0.3
 --- !u!114 &519929471
 MonoBehaviour:
   m_ObjectHideFlags: 0

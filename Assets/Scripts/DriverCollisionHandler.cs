@@ -6,6 +6,7 @@ using UnityEngine;
 public class DriverCollisionHandler : MonoBehaviour
 {
     private DriverManager _driverManager;
+    [SerializeField] private float _collisionSlowdownFactor = -0.3f;
 
     private void Start()
     {
@@ -13,7 +14,7 @@ public class DriverCollisionHandler : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log($"DriverCollisionHandler >> Kolize s {collision.gameObject.name}");
+        _driverManager.AdjustSpeed(_collisionSlowdownFactor);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +25,10 @@ public class DriverCollisionHandler : MonoBehaviour
             switch (target.GetTriggerType())
             {
                 case TriggerTargetTypes.Booster:
+                    if(target is BoosterTarget booster)
+                    {
+                        _driverManager.AdjustSpeed(booster.GetSpeedModifier());
+                    }
                     break;
                 case TriggerTargetTypes.Package:
                     if(target is PackageTarget package)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class DriverManager : MonoBehaviour
@@ -7,6 +8,12 @@ public class DriverManager : MonoBehaviour
     [SerializeField] private Transform _packageIndicator;
     private bool _hasPackage = false;
     private PackageTarget _currentPackage;
+    private Driver _driverMotor;
+
+    private void Start()
+    {
+        _driverMotor = GetComponent<Driver>();
+    }
 
     public bool PickupPackage(PackageTarget package)
     {
@@ -33,5 +40,10 @@ public class DriverManager : MonoBehaviour
         _currentPackage.Respawn();
         _currentPackage = null;
         return true;
+    }
+
+    public void AdjustSpeed(float speedModifier)
+    {
+        _driverMotor.SetSpeedModifier(speedModifier);
     }
 }
