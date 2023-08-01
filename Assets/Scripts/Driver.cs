@@ -15,6 +15,10 @@ public class Driver : MonoBehaviour
             vehicleSteerSpeed = Input.GetAxis("Horizontal") * _vehicleSteerSpeed;
         } 
         transform.Translate(0, vehicleSpeed, 0);
+        if(vehicleSpeed < 0)
+        {
+            vehicleSteerSpeed = vehicleSteerSpeed * -1;
+        }
         transform.Rotate(0,0, -vehicleSteerSpeed);
     }
 }
