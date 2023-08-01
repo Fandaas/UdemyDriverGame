@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3969631718388777150}
   - component: {fileID: 3870930024252054979}
-  - component: {fileID: -1562640591534972163}
   - component: {fileID: 2940305287667552447}
+  - component: {fileID: 7014947557693612801}
   m_Layer: 0
   m_Name: Booster
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 49cf8ef3dac51f946a242fff039a031a, type: 3}
   m_Color: {r: 0.56061316, g: 1, b: 0, a: 1}
   m_FlipX: 0
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1562640591534972163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7580890006947111687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df311f7e712863745a5d05470d6ac234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerObjectType: 3
 --- !u!61 &2940305287667552447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.39, y: 2.48}
   m_EdgeRadius: 0
+--- !u!114 &7014947557693612801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580890006947111687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad51c45c480348a4dbcacc1c83360a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerTargetType: 2

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7600544617903967913}
   - component: {fileID: 8100564283989678399}
-  - component: {fileID: 2903256747078330512}
   - component: {fileID: 2314341675383019186}
+  - component: {fileID: 992803905177072636}
   m_Layer: 0
   m_Name: Package
   m_TagString: Untagged
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2903256747078330512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7883586742045942577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df311f7e712863745a5d05470d6ac234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerObjectType: 1
 --- !u!61 &2314341675383019186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &992803905177072636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7883586742045942577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99e5f1f9e7ce694881258a9a181a162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerObjectType: 1
+  _packageSpawnpoint: {fileID: 0}

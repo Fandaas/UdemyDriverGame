@@ -18,25 +18,25 @@ public class DriverCollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        TriggerTarget target;
-        if(collision.TryGetComponent<TriggerTarget>(out target))
+        ITriggerTarget target;
+        if(collision.TryGetComponent<ITriggerTarget>(out target))
         {
             switch (target.GetTriggerType())
             {
                 case TriggerTargetTypes.Booster:
                     break;
                 case TriggerTargetTypes.Package:
-                    if (_driverManager.PickupPackage())
+                    if(target is PackageTarget package)
                     {
-                        Debug.Log($"Package collected");
-                        collision.gameObject.SetActive(false);
+                        _driverManager.PickupPackage(package);
+                        package.HandleTriggerEvent();
                     }
                     break;
                 case TriggerTargetTypes.Customer:
                     if (_driverManager.DeliverPackage())
                     {
                         Debug.Log($"Customer package delivered");
-                        collision.gameObject.SetActive(false);
+                        target.HandleTriggerEvent();
                     }
                     break;
                 case TriggerTargetTypes.Slowdown:

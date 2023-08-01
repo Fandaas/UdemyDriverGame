@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class TriggerTarget : MonoBehaviour
+public interface ITriggerTarget
 {
-    [SerializeField] private TriggerTargetTypes _triggerObjectType;
-
-    public TriggerTargetTypes GetTriggerType() { return _triggerObjectType; }
+    TriggerTargetTypes GetTriggerType();
+    void HandleTriggerEvent();
 }

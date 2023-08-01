@@ -5,8 +5,9 @@ using UnityEngine;
 public class DriverManager : MonoBehaviour
 {
     private bool _hasPackage = false;
+    private PackageTarget _currentPackage;
 
-    public bool PickupPackage()
+    public bool PickupPackage(PackageTarget package)
     {
         if (_hasPackage)
         {
@@ -14,6 +15,7 @@ public class DriverManager : MonoBehaviour
             return false;
         }
         _hasPackage = true;
+        _currentPackage = package;
         return true;
     }
 
@@ -25,6 +27,8 @@ public class DriverManager : MonoBehaviour
             return false;
         }
         _hasPackage = false;
+        _currentPackage.Respawn();
+        _currentPackage = null;
         return true;
     }
 }

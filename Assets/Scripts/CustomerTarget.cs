@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CustomerTarget : MonoBehaviour, ITriggerTarget
+{
+    [SerializeField] private TriggerTargetTypes _triggerTargetType = TriggerTargetTypes.Customer;
+    [SerializeField] private List<Transform> _spawnpoints;
+    public TriggerTargetTypes GetTriggerType() { return _triggerTargetType; }
+
+    public void HandleTriggerEvent()
+    {
+        this.gameObject.SetActive(false);
+        Respawn();
+    }
+
+    private void Respawn()
+    {
+        int spawnIndex = Random.Range(0, _spawnpoints.Count -1);
+        transform.position = _spawnpoints[spawnIndex].position;
+        this.gameObject.SetActive(true);
+    }
+}
