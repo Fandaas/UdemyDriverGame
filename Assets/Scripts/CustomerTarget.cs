@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class CustomerTarget : MonoBehaviour, ITriggerTarget
@@ -7,6 +8,11 @@ public class CustomerTarget : MonoBehaviour, ITriggerTarget
     [SerializeField] private TriggerTargetTypes _triggerTargetType = TriggerTargetTypes.Customer;
     [SerializeField] private List<Transform> _spawnpoints;
     public TriggerTargetTypes GetTriggerType() { return _triggerTargetType; }
+
+    private void Start()
+    {
+        Respawn();
+    }
 
     public void HandleTriggerEvent()
     {
